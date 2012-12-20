@@ -90,7 +90,7 @@ if (process.env.REDISTOGO_URL) {
 app.configure(function() {
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
-    app.use(express.logger());
+//    app.use(express.logger());
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(express.cookieParser());
@@ -712,10 +712,10 @@ app.post('/upload', function(req, res) {
   res.redirect('back');
 });
 
-// API shortname, all lowercase
-app.get('/:api([^\.]+)', function(req, res) {
-    req.params.api=req.params.api.replace(/\/$/,'');
-    res.render('api');
+app.get('/devo.ps', function(req, res) {
+    req.params.api = "devo.ps";
+    console.log(req.params.api);
+    res.render("api");
 });
 
 // Only listen on $ node app.js

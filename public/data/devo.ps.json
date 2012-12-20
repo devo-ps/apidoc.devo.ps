@@ -1,0 +1,379 @@
+{
+   "endpoints":[
+      {
+         "name":"Server Operation Methods",
+         "methods":[
+            {
+               "MethodName":"List Servers",
+               "Synopsis":"This method allows you to list servers that you can read.",
+               "HTTPMethod":"GET",
+               "URI":"/server",
+               "RequiresOAuth":"N",
+               "Returns":"Server",
+               "parameters":[]
+            },
+            {
+               "MethodName":"Create Server",
+               "Synopsis":"This method allows you to create a new server. If there's already one, update it.",
+               "HTTPMethod":"POST",
+               "URI":"/server",
+               "RequiresOAuth":"N",
+               "Returns":"Server",
+               "parameters":[
+                  {
+                     "Name":"server",
+                     "Required":"N",
+                     "Default":"{}",
+                     "Type":"object",
+                     "Description":"Server object",
+                     "Location":"body"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Get Server",
+               "Synopsis":"This method allows you to get detail information of a server.",
+               "HTTPMethod":"GET",
+               "URI":"/server/:id",
+               "RequiresOAuth":"N",
+               "Returns":"Server",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Replace Server.",
+               "Synopsis":"This method allows you to replace an existing server. If the server doesn't exist, do the same thing as POST /server",
+               "HTTPMethod":"PUT",
+               "URI":"/server/:id",
+               "RequiresOAuth":"N",
+               "Returns":"Server",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"server",
+                     "Required":"N",
+                     "Default":"{}",
+                     "Type":"object",
+                     "Description":"Server object",
+                     "Location":"body"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Delete Server.",
+               "Synopsis":"This method allows you to delete a server.",
+               "HTTPMethod":"DELETE",
+               "URI":"/server/:id",
+               "RequiresOAuth":"N",
+               "Returns":"Server",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Server Name Methods",
+         "methods":[
+            {
+               "MethodName":"Get Server Name",
+               "Synopsis":"This method allows you to retrieve server name",
+               "HTTPMethod":"GET",
+               "URI":"/server/:id/name",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Get server name."
+                  }
+               ]
+            },
+            {
+               "MethodName":"Create or update server name",
+               "Synopsis":"This method allows you to create or update server name",
+               "HTTPMethod":"PUT",
+               "URI":"/server/:id/name",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"name",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Server name",
+                     "Location":"body"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Delete server name",
+               "Synopsis":"This method allows you to delete server name",
+               "HTTPMethod":"DELETE",
+               "URI":"/server/:id/name",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Server Keywords Methods",
+         "methods":[
+            {
+               "MethodName":"Get Keywords",
+               "Synopsis":"This method allows you to get all Keywords for a server.",
+               "HTTPMethod":"GET",
+               "URI":"/server/:id/Keywords",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  }
+               ]
+            },
+            {
+               "MethodName":"Create/Replace Keywords",
+               "Synopsis":"This method allows you to updates the keywords if keywords existed, or create them.",
+               "HTTPMethod":"PUT",
+               "URI":"/server/:id/keywords",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"keywords",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"object",
+                     "Description":"keywords",
+                     "Location":"body"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Delete Keywords",
+               "Synopsis":"This method allows you to delete the keywords.",
+               "HTTPMethod":"PUT",
+               "URI":"/server/:id/keywords",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Server Services Methods",
+         "methods":[
+            {
+               "MethodName":"Get Services",
+               "Synopsis":"This method allows you to get all services of a server.",
+               "HTTPMethod":"GET",
+               "URI":"/server/:id/services",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  }
+               ]
+            },
+            {
+               "MethodName":"Create/Replace services",
+               "Synopsis":"This method allows you to updates the keywords if keywords existed, or create them.",
+               "HTTPMethod":"PUT",
+               "URI":"/server/:id/services",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"services",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"object",
+                     "Description":"Services",
+                     "Location":"body"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Delete services",
+               "Synopsis":"This method allows you to delete the services attribute.",
+               "HTTPMethod":"DELETE",
+               "URI":"/server/:id/services",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  }
+               ]
+            },
+            {
+               "MethodName":"Add Keywords",
+               "Synopsis":"This method allows you to add new service, if the service existed .... .",
+               "HTTPMethod":"POST",
+               "URI":"/server/:id/keywords",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"keywords",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"object",
+                     "Description":"Keywords"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Get Service Key",
+               "Synopsis":"This method allows you to get a value of server's service.",
+               "HTTPMethod":"GET",
+               "URI":"/server/:id/services/:key",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"key",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Service key."
+                  }
+               ]
+            },
+            {
+               "MethodName":"Create/Replace service key",
+               "Synopsis":"This method allows you to updates the key, or create them.",
+               "HTTPMethod":"PUT",
+               "URI":"/server/:id/services/:key",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"key",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Service key."
+                  },
+                  {
+                     "Name":"value",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"value of the key",
+                     "Location":"body"
+                  }
+               ]
+            },
+            {
+               "MethodName":"Delete service key",
+               "Synopsis":"This method allows you to delete the service key attribute.",
+               "HTTPMethod":"DELETE",
+               "URI":"/server/:id/services/:key",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"integer",
+                     "Description":"Server id."
+                  },
+                  {
+                     "Name":"key",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Service key."
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
+
